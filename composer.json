@@ -1,0 +1,19 @@
+{
+    "name": "manohar/address",
+    "description": "Address package (countries, provinces, districts, cities)",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Manohar\\Address\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Manohar\\Address\\AddressServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
