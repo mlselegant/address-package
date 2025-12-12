@@ -1,6 +1,6 @@
 <?php
 
-namespace Manohar\Address\Models\Addresses;
+namespace Manohar\Address\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
