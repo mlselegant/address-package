@@ -11,6 +11,8 @@ class District extends Model
 
     protected $guarded = [];
 
+    public $timestamps = false;
+
     public function province(): BelongsTo
     {
         return $this->belongsTo(Province::class, 'province_id');

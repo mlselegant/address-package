@@ -11,6 +11,8 @@ class City extends Model
 
     protected $guarded = [];
 
+    public $timestamps = false;
+
     public function district(): BelongsTo
     {
         return $this->belongsTo(District::class, 'district_id');

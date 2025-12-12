@@ -9,4 +9,6 @@ class Province extends Model
     protected $table = 'provinces';
 
     protected $guarded = [];
+
+    public $timestamps = false;
 }
