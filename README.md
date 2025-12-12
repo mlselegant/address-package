@@ -43,7 +43,7 @@ php artisan vendor:publish --provider="Manohar\Address\AddressServiceProvider" -
 
 ```bash
 php artisan db:seed --class="Manohar\\Address\\Database\\Seeders\\AddressSeeder"
-
+```
 
 ### 6. Database Structure
 
@@ -70,7 +70,7 @@ cities
   ├── district_id
   ├── name
   └── name_np
-
+```
 
 ### 7. Basic uses in controller
 
@@ -94,7 +94,7 @@ $cities = City::where('district_id', 1)->get();
 
 // Get full address hierarchy
 $country = Country::with('provinces.districts.cities')->find(1);  
-
+```
 
 ### 8. Relationships. The package provides the following Eloquent relationships:
 
@@ -112,3 +112,4 @@ $district->cities;
 
 // City belongs to District
 $city->district;
+```
