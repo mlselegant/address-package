@@ -3,10 +3,10 @@
 namespace Manohar\Address\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Manohar\Address\Models\Addresses\City;
-use Manohar\Address\Models\Addresses\Country;
-use Manohar\Address\Models\Addresses\District;
-use Manohar\Address\Models\Addresses\Province;
+use Manohar\Address\Models\City;
+use Manohar\Address\Models\Country;
+use Manohar\Address\Models\District;
+use Manohar\Address\Models\Province;
 
 class AddressSeeder extends Seeder
 {
