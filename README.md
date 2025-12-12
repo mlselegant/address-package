@@ -55,7 +55,6 @@ countries
 
 provinces
   ├── id
-  ├── country_id
   ├── name
   └── name_np
 
