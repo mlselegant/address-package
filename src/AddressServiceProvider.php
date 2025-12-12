@@ -17,12 +17,12 @@ class AddressServiceProvider extends ServiceProvider
 
         // Publish command(s) if needed — example to publish migrations or config
         $this->publishes([
-            __DIR__.'/../database/migrations' => database_path('migrations/vendor/manohar/address'),
-        ], 'manohar-address-migrations');
+            __DIR__.'/../database/migrations' => database_path('migrations/address'),
+        ], 'address-migrations');
 
         $this->publishes([
-            __DIR__.'/../database/seeders' => database_path('seeders/vendor/manohar/address'),
-        ], 'manohar-address-seeders');
+            __DIR__.'/../database/seeders' => database_path('seeders/address'),
+        ], 'address-seeders');
     }
 
     public function register(): void
