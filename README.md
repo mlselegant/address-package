@@ -84,32 +84,13 @@ use Manohar\Address\Models\City;
 $countries = Country::all();
 
 // Get provinces by country
-$provinces = Province::where('country_id', 1)->get();
+$provinces = Province::all();
 
 // Get districts by province
 $districts = District::where('province_id', 1)->get();
 
 // Get cities by district
 $cities = City::where('district_id', 1)->get();
-
-// Get full address hierarchy
-$country = Country::with('provinces.districts.cities')->find(1);  
+  
 ```
 
-### 8. Relationships. The package provides the following Eloquent relationships:
-
-```php
-// Country has many Provinces
-$country->provinces;
-
-// Province belongs to Country, has many Districts
-$province->country;
-$province->districts;
-
-// District belongs to Province, has many Cities
-$district->province;
-$district->cities;
-
-// City belongs to District
-$city->district;
-```
