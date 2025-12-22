@@ -2,13 +2,14 @@
 
 namespace Manohar\Address\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Province extends Model
+class Province extends ReadOnlyModel
 {
     protected $table = 'provinces';
 
-    protected $guarded = [];
-
-    public $timestamps = false;
+    public function districts(): HasMany
+    {
+        return $this->hasMany(District::class, 'province_id', 'id');
+    }
 }

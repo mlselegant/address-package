@@ -6,16 +6,13 @@ A comprehensive address management package for Laravel applications, providing c
 
 - 📍 **Hierarchical Address Structure**: Country → Province → District → City
 - 🌐 **Multilingual Support**: English and Nepali (name_np) fields
-- 🏗️ **Modular & Extensible**: Easy to integrate and extend
-- 📊 **Seeder Included**: Pre-loaded with sample Nepali addresses
-- 🔧 **Artisan Commands**: Convenient CLI tools
 - 📦 **Composer Ready**: Easy installation via Composer
 
 ## Requirements
 
 - PHP 8.2 or higher
 - Laravel 12.x
-- MySQL, PostgreSQL, or SQLite
+- SQLite
 
 ## Installation
 
@@ -24,26 +21,10 @@ A comprehensive address management package for Laravel applications, providing c
 ```bash
 composer require manohar/address
 
-### 2. Publish the migration files
+### 2. Publish the Sqlite database
 
 ```bash
-php artisan vendor:publish --provider="Manohar\Address\AddressServiceProvider" --tag="address-migrations"
-
-### 3. Run the migrations
-
-```bash
-php artisan migrate
-
-### 4. Publish the seeder files
-
-```bash
-php artisan vendor:publish --provider="Manohar\Address\AddressServiceProvider" --tag="address-seeders"
-
-### 5. Run the seeder
-
-```bash
-php artisan db:seed --class="Manohar\\Address\\Database\\Seeders\\AddressSeeder"
-```
+php artisan vendor:publish --tag=address-database
 
 ### 6. Database Structure
 
@@ -51,7 +32,9 @@ php artisan db:seed --class="Manohar\\Address\\Database\\Seeders\\AddressSeeder"
 countries
   ├── id
   ├── name
-  └── name_np
+  ├── name_np
+  └── code
+  
 
 provinces
   ├── id
@@ -90,6 +73,12 @@ $districts = District::where('province_id', 1)->get();
 
 // Get cities by district
 $cities = City::where('district_id', 1)->get();
+
+// return pluck ('name', 'id') for select option
+$cities = City::getCityCache();
+
+// Get full address like: [Kathmandu Metropolitan City, Kathmandu, Bagmati Pradesh]
+$fullAddress = City::fullAddressByCityId(299);
   
 ```
 

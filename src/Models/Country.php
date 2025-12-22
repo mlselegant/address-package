@@ -2,13 +2,9 @@
 
 namespace Manohar\Address\Models;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model
+class Country extends ReadOnlyModel
 {
     protected $table = 'countries';
 
-    protected $guarded = [];
-
-    public $timestamps = false;
 }
